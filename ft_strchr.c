@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmirje <mmirje@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 12:52:44 by mmirje            #+#    #+#             */
-/*   Updated: 2024/04/20 12:56:12 by mmirje           ###   ########.fr       */
+/*   Created: 2024/11/05 11:21:49 by mmirje            #+#    #+#             */
+/*   Updated: 2024/11/05 11:47:05 by mmirje           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (*(s + i) == (char)c)
 			return ((char *)(s + i));
-		i++;
 	}
 	if ('\0' == (char)c)
 		return ((char *)(s + i));

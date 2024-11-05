@@ -5,27 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmirje <mmirje@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 12:53:05 by mmirje            #+#    #+#             */
-/*   Updated: 2024/04/20 14:37:40 by mmirje           ###   ########.fr       */
+/*   Created: 2024/11/05 10:59:31 by mmirje            #+#    #+#             */
+/*   Updated: 2024/11/05 11:47:00 by mmirje           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_specifier(va_list argsptr, char c)
+int	ft_specifier(va_list ptr, char c)
 {
 	if (c == 'c')
-		return (ft_putchar(va_arg(argsptr, int)));
+		return (ft_putchar(va_arg(ptr, int)));
 	else if (c == 's')
-		return (ft_putstr(va_arg(argsptr, char *)));
+		return (ft_putstr(va_arg(ptr, char *)));
 	else if (c == 'p')
-		return (ft_putptr(va_arg(argsptr, uintptr_t)));
+		return (ft_putptr(va_arg(ptr, uintptr_t)));
 	else if (c == 'd' || c == 'i')
-		return (ft_putnbr(va_arg(argsptr, int)));
+		return (ft_putnbr(va_arg(ptr, int)));
 	else if (c == 'u')
-		return (ft_putu(va_arg(argsptr, unsigned int)));
+		return (ft_putu(va_arg(ptr, unsigned int)));
 	else if (c == 'x' || c == 'X')
-		return (ft_puthex(va_arg(argsptr, unsigned int), c));
+		return (ft_puthex(va_arg(ptr, unsigned int), c));
 	else if (c == '%')
 		return (ft_putchar(37));
 	else
@@ -36,41 +36,22 @@ int	ft_printf(const char *str, ...)
 {
 	int		i;
 	int		len;
-	va_list	argsptr;
+	va_list	ptr;
 
 	i = 0;
 	len = 0;
-	va_start(argsptr, str);
+	va_start(ptr, str);
 	while (*(str + i) != '\0')
 	{
 		if (*(str + i) == '%' && ft_strchr("cspdiuxX%", *(str + i + 1)))
 		{
-			len += ft_specifier(argsptr, *(str + i + 1));
+			len += ft_specifier(ptr, *(str + i + 1));
 			i++;
 		}
 		else
 			len += ft_putchar(*(str + i));
 		i++;
 	}
-	va_end(argsptr);
+	va_end(ptr);
 	return (len);
 }
-
-/*int	main(void)
-{
-	unsigned int		a;
-	void				*p;
-	int					count;
-
-	a = 12346789;
-	p = &a;
-	count = ft_printf("printing from ft_printf : %x :\n", a);
-	ft_printf("printing from ft_printf : %x :\n", a);
-	printf("count :%d:\n", count);
-	count = printf("printing from    printf : %x :\n", a);
-	printf("printing from printf : %x :\n", a);
-	printf("count :%d:\n", count);
-	ft_printf("printing p from ft_printf: %p\n", p);
-	printf("printing p from printf: %p\n", p);
-	return (0);
-}*/
