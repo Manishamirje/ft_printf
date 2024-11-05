@@ -6,13 +6,13 @@
 #    By: mmirje <mmirje@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:00:16 by mmirje            #+#    #+#              #
-#    Updated: 2024/11/05 11:04:28 by mmirje           ###   ########.fr        #
+#    Updated: 2024/11/05 11:31:36 by mmirje           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRC = 
+SRC = ft_printf.c ft_strchr.c
 
 OBJ = $(SRC:.c=.o)
 

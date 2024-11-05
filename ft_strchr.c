@@ -6,7 +6,7 @@
 /*   By: mmirje <mmirje@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:21:49 by mmirje            #+#    #+#             */
-/*   Updated: 2024/11/05 11:24:30 by mmirje           ###   ########.fr       */
+/*   Updated: 2024/11/05 11:30:13 by mmirje           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
-	while (*(s = i))
+	while (*(s + i))
 	{
 		if (*(s + i) == (char)c)
 			return ((char *)(s + i));
