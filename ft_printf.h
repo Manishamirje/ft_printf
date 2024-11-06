@@ -21,5 +21,6 @@
 
 int		ft_printf(const char *str, ...);
 char	*ft_strchr(const char *s, int c);
+int		ft_putchar(int c);
 
 #endif
