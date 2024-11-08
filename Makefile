@@ -15,7 +15,7 @@ NAME = libftprintf.a
 SRC = ft_printf.c ft_strchr.c ft_putchar.c ft_puthex.c ft_putnbr.c ft_putptr.c \
 		ft_putstr.c ft_putu.c
 
-OBJ = $(SRC:.c=.o)
+OBJS = $(SRC:.c=.o)
 
 CC = cc
 
@@ -25,12 +25,12 @@ HEADER = ft_printf.h
 
 all : $(NAME)
 
-$(NAME) :  $(OBJ)
+$(NAME) :  $(OBJS)
 			$(CC) $(FLAGS) -c $(SRC)
-			ar rc $(NAME) $(OBJ)
+			ar rc $(NAME) $(OBJS)
 
 clean :
-		rm -rf $(OBJ)
+		rm -rf $(OBJS)
 
 fclean : clean
 		rm -f $(NAME)

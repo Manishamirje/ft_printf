@@ -25,7 +25,9 @@ int		ft_putchar(int c);
 int		ft_puthex(unsigned int t, char str);
 int		ft_putnbr(int n);
 int		ft_putptr(uintptr_t ptr);
+int		ft_ptr(uintptr_t t);
 int		ft_putstr(char *s);
 int		ft_putu(unsigned int t);
+int		ft_specifier(va_list ptr, char c);
 
 #endif

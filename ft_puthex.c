@@ -16,7 +16,7 @@ int	ft_puthex(unsigned int t, char str)
 {
 	int		len;
 	char	*values;
-	char	*value_x;
+	char	*values_x;
 
 	values = "0123456789abcdef";
 	values_x = "0123456789ABCDEF";

@@ -55,3 +55,22 @@ int	ft_printf(const char *str, ...)
 	va_end(ptr);
 	return (len);
 }
+
+int	main(void)
+{
+	char			*a;
+	void			*p;
+	int				count;
+
+	a = "1234567";
+	p = &a;
+	count = ft_printf("ft_printf: %s :\n", a);
+	ft_printf("ft_printf: %s :\n", a);
+	printf("ft_printf -> Count:%d:\n", count);
+	count = printf("   Printf: %s :\n", a);
+	printf("Printf :%s:\n", a);
+	printf("printf -> count:%d:\n", count);
+	ft_printf("ft_printf -> pointer p:%p:\n", p);
+	printf("printf ->    pointer p:%p:\n", p);
+	return (0);
+}

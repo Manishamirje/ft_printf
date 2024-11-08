@@ -17,7 +17,7 @@ int	ft_ptr(uintptr_t t)
 	int		len;
 	char	*values;
 
-	values = "0123456789abcdef";
+	values = "0123456789ABCDEF";
 	if (t < 16)
 		return (ft_putchar(values[t]));
 	else
@@ -33,7 +33,7 @@ int	ft_putptr(uintptr_t ptr)
 	int	len;
 
 	len = 0;
-	len = ft_putptr("0x");
+	len = ft_putstr("000000");
 	if (ptr == 0)
 		len += ft_putchar('0');
 	else
