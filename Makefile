@@ -12,7 +12,8 @@
 
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_strchr.c
+SRC = ft_printf.c ft_strchr.c ft_putchar.c ft_puthex.c ft_putnbr.c ft_putptr.c \
+		ft_putstr.c ft_putu.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -35,4 +36,3 @@ fclean : clean
 		rm -f $(NAME)
 
 re : fclean all
-		

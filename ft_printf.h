@@ -22,5 +22,10 @@
 int		ft_printf(const char *str, ...);
 char	*ft_strchr(const char *s, int c);
 int		ft_putchar(int c);
+int		ft_puthex(unsigned int t, char str);
+int		ft_putnbr(int n);
+int		ft_putptr(uintptr_t ptr);
+int		ft_putstr(char *s);
+int		ft_putu(unsigned int t);
 
 #endif
